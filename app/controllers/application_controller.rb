@@ -12,9 +12,11 @@ class ApplicationController < ActionController::Base
   end
   
   def counts(user)
+    #user = User.find(params[:id])
     @count_microposts = user.microposts.count
     @count_followings = user.followings.count
     @count_followers = user.followers.count
+    @count_favorites = user.favorite_microposts.count
   end
   
 end
